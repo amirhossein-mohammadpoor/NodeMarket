@@ -1,0 +1,35 @@
+.user-page-nav {
+  border: 1px solid gainsboro;
+  padding: 10px;
+  height: 235px;
+
+  h4 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  a {
+    display: block;
+    padding: 3px 0px;
+    margin-bottom: 5px;
+  }
+
+  .active {    
+    background-color: red;
+    color: white;
+  }
+
+  .logout {
+    color: #007bff;
+    cursor: pointer;
+  }
+}
+
+@keyframes fade-user {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
