@@ -1,0 +1,43 @@
+.user-orders {
+  h4,h2 {
+    text-align: center;
+  }
+
+  .order-list {
+    margin-bottom: 20px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .number {
+      background-color: red;
+      color: white;
+      border-radius: 5px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+    }
+
+    .order-date {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .order-list:nth-child(even) {
+    background-color: #17a2b8;
+    color: white;
+  }  
+
+  animation: user-fade 0.5s;
+}
