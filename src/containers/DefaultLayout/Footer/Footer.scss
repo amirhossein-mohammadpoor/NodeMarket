@@ -1,0 +1,30 @@
+footer {
+  margin-top: 50px;
+
+  .phone-number {
+    text-align: left;
+  }
+
+  .email {
+    text-align: left;
+  }
+
+  .copywrite {
+    text-align: center;
+    background-color: #e6e8e8;
+    margin-top: 10px;
+    padding: 10px;    
+  }
+
+  h5 {
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 1px solid green;
+    padding-bottom: 8px;
+  }
+
+  ul {
+    list-style-type:none;
+    padding: 0;
+  }
+}
