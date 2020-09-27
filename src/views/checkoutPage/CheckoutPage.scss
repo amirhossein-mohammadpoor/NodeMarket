@@ -1,0 +1,39 @@
+.checkout-wrapper {
+  width: 100%;
+  height: 100%;
+
+  .checkout-content {
+    margin: 0 auto;
+    max-width: 700px;
+
+    .cash {
+      display: flex;
+      justify-content: space-between;
+      color: green;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      color: blue;
+      margin-bottom: 30px;
+    }
+
+    .not-enough-credit {
+      text-align: center;
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
