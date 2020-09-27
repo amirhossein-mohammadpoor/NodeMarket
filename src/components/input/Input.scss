@@ -1,0 +1,27 @@
+.input {
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 0%;
+    right: 5px;
+    transform: translateY(-50%);
+    z-index: 3;    
+    background-color: white;    
+    font-size: 14px;
+    user-select: none;    
+  }
+
+  input {
+    width: 100%;
+    padding: 6px 10px;
+    outline: 0;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    transition: 0.3s;
+
+    &:focus {
+      border: 1px solid red;
+    }
+  }
+}
