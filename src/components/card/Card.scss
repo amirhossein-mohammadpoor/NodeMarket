@@ -1,0 +1,42 @@
+.product-card {
+  transition: 0.5s;
+  cursor: pointer;
+  padding: 10px;
+
+  img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .title {
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    height: 50px;
+    margin-bottom: 0;
+  }
+
+  .price-tag {
+    display: flex;
+    flex-direction: column;    
+    text-align: center;
+    direction: rtl;
+
+    .regular-price {      
+      color: red;
+      text-decoration: line-through;
+    }
+
+    .price {      
+      color: green;      
+    }
+  }
+
+  &:hover {
+    box-shadow: 5px 5px 15px 5px #888888;
+  }
+}
+
+.slick-slide {
+  padding: 10px;
+}
