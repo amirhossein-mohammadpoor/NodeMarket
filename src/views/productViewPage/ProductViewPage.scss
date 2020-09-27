@@ -1,0 +1,125 @@
+.product-view {
+  border: 1px solid #ced4da;
+  padding: 15px 0px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .spinner {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: green;   
+  }
+
+  .add-to-cart-field {
+    background-color: #f5f5f5;
+
+    .share-product, .add-to-favorites {
+      cursor: pointer;
+      margin-bottom: 10px;
+      user-select: none;
+    }     
+
+    .price-field {
+      display: flex;
+      flex-direction: column;
+      
+      .regular-price {
+        color: red;
+        text-align: left;
+        font-weight: bold;
+        font-size: 24px;
+        text-decoration: line-through;
+      }
+      
+      .price {
+        text-align: left;
+        font-weight: bold;
+        font-size: 24px;
+        color: green;
+      }
+    }
+  }  
+
+  .edit-number {
+    font-size: 20px;
+
+    .plus {
+      background-color: green;
+      color: white;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .minus {
+      background-color: red;
+      color: white;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .number {
+      user-select: none;
+      display: inline-block;
+      background-color: silver;
+      width: 80px;
+      margin: 0px 5px;
+      text-align: center;
+    }
+  }
+}
+
+.related-products {
+  margin-top: 20px;
+  h2 {
+    display: inline-block;
+    border-bottom: 1px solid green;
+  }
+
+  .spinner {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: green;   
+  }
+}
+
+.share-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 25px;
+
+  .telegram-button {
+    border: 1px solid blue;
+    color: blue;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: blue;
+      color: white;
+    }
+  }
+
+  .whatsapp-button {
+    border: 1px solid lime;
+    color: lime;
+    transition: 0.3s;
+    margin-left: 20px;
+
+    &:hover {
+      background-color: lime;
+      color: white;
+    }
+  }
+}
