@@ -1,0 +1,57 @@
+.user-credit {
+  padding: 10px;
+
+  h4 {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 10px;    
+  }
+
+  h5 {
+    text-align: center;
+    margin: 50px 0px;
+  }
+
+  ul {
+    padding: 0;    
+    list-style-type: none;
+    margin: 40px 0px;
+  }
+
+  .custom-credit-input {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    
+    input {
+      width: 400px;
+      text-align: center;
+      border: 1px solid gainsboro;
+      padding: 5px;
+      transition: 0.3s;
+      
+      &:hover {
+        border: 1px solid black;
+      }
+    }
+
+    input::placeholder {
+      text-align: center;
+      color: gainsboro;
+    }
+
+    span {
+      margin-right: 5px;
+      line-height: 35px;
+    }
+  }
+
+  .add-credit-button {
+      
+    display: flex;
+    justify-content: center;
+  }
+
+  animation: user-fade 0.5s;
+}
