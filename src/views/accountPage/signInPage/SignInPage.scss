@@ -1,0 +1,28 @@
+.signin-form {
+  border-radius: 5px;  
+
+  form {
+    margin: 0 auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+
+    h4 {
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+      text-align: center;
+      border-bottom: 1px solid #ced4da;
+    }
+
+    .signin-form-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+  }
+}
