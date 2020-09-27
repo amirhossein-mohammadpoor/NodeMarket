@@ -1,0 +1,22 @@
+.default-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border: 1px solid #e0e0e2 !important;
+  background-color: white;
+  color: #474747;
+  padding: 8px 10px;
+  font-size: 16px;  
+  outline: 0;
+  border-radius: 8px;
+  border: 0;
+  transition: 0.3s;
+
+  svg {
+    color: green;    
+  }
+
+  &:hover {
+    background-color: #e0e0e2;
+  }
+}

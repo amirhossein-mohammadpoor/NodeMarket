@@ -1,0 +1,12 @@
+.toggle-button {
+ background-color: white;
+ color: green;
+ border: 1px solid green;
+ border-radius: 3px;
+ transition: 0.3s;
+}
+
+.toggle-button-active {
+  background-color: green;
+ color: white;
+}

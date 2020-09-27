@@ -1,0 +1,27 @@
+.float-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(30px);
+  z-index: 123;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.float-button-enter-done {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.float-button-exit {
+  opacity: 0;
+  transform: translateY(50px);
+}

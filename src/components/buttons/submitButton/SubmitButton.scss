@@ -1,0 +1,14 @@
+.submit-button {
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+  outline: 0;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: green;
+    color: white;
+  }
+}
