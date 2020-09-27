@@ -1,0 +1,17 @@
+.favorites {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .spinner {    
+    color: green;
+  }
+
+  h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  animation: user-fade 0.3s;
+}
