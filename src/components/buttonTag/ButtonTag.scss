@@ -1,0 +1,22 @@
+.button-tag {
+  color: white;
+  background-color: rgba(255, 0, 0, 1);
+  width: 16px;
+  height: 16px;  
+  border-radius: 50%;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: -8px;
+  text-align: center;
+  animation: 0.3s fade-button-tag;
+}
+
+@keyframes fade-button-tag {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
