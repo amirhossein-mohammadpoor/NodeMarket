@@ -166,7 +166,9 @@ const ProductViewPage = props => {
           <Col xs={12} lg={6} className="mb-4 mb-lg-0">
             {
               product.imageSrc ?
-                <img src={product.imageSrc} alt="" />
+                <a href={product.imageSrc} target="_blank" rel="noopener noreferrer">
+                  <img src={product.imageSrc} alt="" />
+                </a>                
                 :
                 <div className="spinner"><Spinner /></div>
             }

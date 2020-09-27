@@ -29,12 +29,12 @@ const routes = [
   },
   {
     exact: true,
-    path: "/product/:id",
+    path: "/product/:id/:title",
     component: ProductViewPage
   },
   {
     exact: true,
-    path: "/category/:id",
+    path: "/category/:id/:title",
     component: CategoryPage
   },
   {

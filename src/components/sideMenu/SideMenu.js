@@ -43,41 +43,41 @@ const SideMenu = () => {
       >
         <div className="header-bottom">
           <ul className="nav">
-            <NavLink to="/category/121">
+            <NavLink to="/category/121/آرایشی بهداشتی">
               <li>آرایشی بهداشتی</li>
             </NavLink>
-            <NavLink to="/category/52">
+            <NavLink to="/category/52/دیجیتال">
               <li>دیجیتال</li>
             </NavLink>
             <li className="dropdown">
               پوشاک
               <div className="dropdown-content">
-                <NavLink to="/category/64">
+                <NavLink to="/category/64/پوشاک مردانه">
                   <div>مردانه</div>
                 </NavLink>
-                <NavLink to="/category/63">
+                <NavLink to="/category/63/پوشاک زنانه">
                   <div>زنانه</div>
                 </NavLink>
               </div>
             </li>
-            <NavLink to="/category/102">
+            <NavLink to="/category/102/ساعت و موچ بند هوشمند">
               <li>ساعت و موچ بند هوشمند</li>
             </NavLink>
             <li className="dropdown">
               فرهنگی و هنری
               <div className="dropdown-content">
-                <NavLink to="/category/77">
+                <NavLink to="/category/77/فیلم">
                   <div>فیلم</div>
                 </NavLink>                
-                <NavLink to="/category/79">
+                <NavLink to="/category/79/کتاب و مجلات">
                   <div>کتاب و مجلات</div>
                 </NavLink>
-                <NavLink to="/category/76">
+                <NavLink to="/category/76/کتاب و هنر">
                   <div>کتاب و هنر</div>
                 </NavLink>
               </div>
             </li>
-            <NavLink to="/category/119">
+            <NavLink to="/category/119/فروش ویژه">
               <li>فروش ویژه</li>
             </NavLink>
           </ul>
@@ -109,14 +109,14 @@ const SideMenu = () => {
                   <NavLink
                     className={compareURL(location, "/category/121") ? "active" : null}
                     onClick={() => setHideDrawer(true)}
-                    to="/category/121"
+                    to="/category/121/آرایشی بهداشتی"
                   >
                     آرایشی بهداشتی
                   </NavLink>
                   <NavLink
                     className={compareURL(location, "/category/52") ? "active" : null}
                     onClick={() => setHideDrawer(true)}
-                    to={"/category/52"}
+                    to={"/category/52/دیجیتال"}
                   >
                     دیجیتال
                   </NavLink>
@@ -131,14 +131,14 @@ const SideMenu = () => {
                       <NavLink
                         className={compareURL(location, "/category/63") ? "active" : null}
                         onClick={() => setHideDrawer(true)}
-                        to={"/category/63"}
+                        to={"/category/63/پوشاک زنانه"}
                       >
                         زنانه
                       </NavLink>
                       <NavLink
                         className={compareURL(location, "/category/64") ? "active" : null}
                         onClick={() => setHideDrawer(true)}
-                        to={"/category/64"}
+                        to={"/category/64/پوشاک مردانه"}
                       >
                         مردانه
                       </NavLink>
@@ -147,7 +147,7 @@ const SideMenu = () => {
                   <NavLink
                     className={compareURL(location, "/category/102") ? "active" : null}
                     onClick={() => setHideDrawer(true)}
-                    to={"/category/102"}
+                    to={"/category/102/ساعت و موچ بند هوشمند"}
                   >
                     ساعت و مچ بند هوشمند
                   </NavLink>
@@ -162,21 +162,21 @@ const SideMenu = () => {
                       <NavLink
                         className={compareURL(location, "/category/77") ? "active" : null}
                         onClick={() => setHideDrawer(true)}
-                        to={"/category/77"}
+                        to={"/category/77/فیلم"}
                       >
                         فیلم
                       </NavLink>
                       <NavLink
                         className={compareURL(location, "/category/79") ? "active" : null}
                         onClick={() => setHideDrawer(true)}
-                        to={"/category/79"}
+                        to={"/category/79/کتاب و مجلات"}
                       >
                         کتاب و مجلات
                       </NavLink>
                       <NavLink
                         className={compareURL(location, "/category/76") ? "active" : null}
                         onClick={() => setHideDrawer(true)}
-                        to={"/category/76"}
+                        to={"/category/76/کتاب و هنر"}
                       >
                         کتاب و هنر
                       </NavLink>

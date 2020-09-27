@@ -15,7 +15,7 @@ const Card = props => {
 
   return (
     <div className="product-card">
-      <NavLink to={`/product/${id}`}>
+      <NavLink to={`/product/${id}/${title}`}>
         <img
           src={imageSrc}
           alt=""
