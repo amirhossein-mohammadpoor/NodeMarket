@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "YekanBakh";
+  src: url("/assets/fonts/YekanBakh.ttf")
+}
+
+* {
+  font-family: "YekanBakh";
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  direction: rtl !important;
+  text-align: right !important;  
+}
+
+button {
+  cursor: pointer;  
+  border: 0;  
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.row {
+  width: 100%;
+}
