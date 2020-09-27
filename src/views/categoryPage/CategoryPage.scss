@@ -1,0 +1,18 @@
+.category {
+  .filters {
+    h3 {
+      border-bottom: 1px solid silver;
+    }
+
+    .filter {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      label {
+        margin-right: 5px;
+        margin-bottom: 0;
+      }
+    }    
+  }
+}
