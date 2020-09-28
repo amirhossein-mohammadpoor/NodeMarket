@@ -1,5 +1,4 @@
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api"
-import keys from "../config/keys"
 
 export default new WooCommerceRestApi({
   url: "https://woocommerce.maktabsharif.ir/",

@@ -27,8 +27,7 @@ const routes = [
     path: "/account",
     component: AccountPage
   },
-  {
-    exact: true,
+  {    
     path: "/product/:id/:title",
     component: ProductViewPage
   },

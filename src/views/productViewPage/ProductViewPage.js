@@ -6,7 +6,7 @@ import Modal from "../../components/modal/Modal"
 import { useParams, useLocation } from "react-router-dom"
 import api from "../../api/wooCommerce"
 import Slider from "react-slick"
-import { relatedProductsSliderSetting } from "../../constants/sliderConfig"
+import { relatedProductsSliderSetting, productsSliderSettings } from "../../constants/sliderConfig"
 import Card from "../../components/card/Card"
 import { Spinner } from "reactstrap"
 import { FaStar, FaShare, FaTrash } from "react-icons/fa"
@@ -35,7 +35,7 @@ const ProductViewPage = props => {
   const location = useLocation()
   const [product, setProduct] = useState({
     name: "",
-    imageSrc: "",
+    imageSrc: [],
     regularPrice: "",
     price: "",
     totalSales: 0,
@@ -45,13 +45,14 @@ const ProductViewPage = props => {
   })
   const [loading, setLoading] = useState(false)
   const [relatedProducts, setRelatedProdutcs] = useState([])
+  const [image, setImage] = useState("")
   const history = useHistory()
   const token = useSelector(state => state.user.token)
   const currentProduct = userProducts.find(product => product.productId === id)
   const number = currentProduct ? currentProduct.number : 0
   let isFavorite = false
   if (user.favorites) {
-    isFavorite = !!user.favorites.find(f => f === id)    
+    isFavorite = !!user.favorites.find(f => f === id)
   }
 
   const handleAddToCart = () => {
@@ -69,6 +70,9 @@ const ProductViewPage = props => {
     }
 
     addItem(CART)
+  }
+  const handleChangeImage = src => {
+    setImage(src)
   }
   const handlePlus = () => {
     if (!token)
@@ -112,14 +116,14 @@ const ProductViewPage = props => {
     <React.Fragment>
       <p>با استفاده از روش‌های زیر می‌توانید این صفحه را با دوستان خود به اشتراک بگذارید.</p>
       <div className="share-buttons">
-        <a 
+        <a
           href={`https://telegram.me/share/url?url=http://localhost${location.pathname}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <button className="telegram-button">Telegram</button>
         </a>
-        <a 
+        <a
           href={`https://api.whatsapp.com/send?text=http://localhost${location.pathname}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -135,10 +139,11 @@ const ProductViewPage = props => {
       .then(product => {
         const ID = product.data.id
         const array = product.data.related_ids
+        setImage(product.data.images[0].src)
         setProduct({
           name: product.data.name,
           description: product.data.description,
-          imageSrc: product.data.images[0].src,
+          imageSrc: product.data.images,
           regularPrice: product.data.regular_price,
           price: product.data.price,
           totalSales: product.data.total_sales,
@@ -152,6 +157,7 @@ const ProductViewPage = props => {
           .then(response => {
             setRelatedProdutcs([...response.data])
             setLoading(false)
+            document.documentElement.scrollTo(0, 0)
           })
       })
   }, [id])
@@ -161,14 +167,30 @@ const ProductViewPage = props => {
       <Container>
         {
           loading && <LoadingScreen />
-        }        
+        }
         <Row className="product-view px-3">
           <Col xs={12} lg={6} className="mb-4 mb-lg-0">
             {
               product.imageSrc ?
-                <a href={product.imageSrc} target="_blank" rel="noopener noreferrer">
-                  <img src={product.imageSrc} alt="" />
-                </a>                
+                <div>
+                  <img src={image} alt="" />
+                  <Slider {...productsSliderSettings}>
+                    {
+                      !loading ? 
+                        product.imageSrc.map(img => (
+                          <div
+                            key={img}
+                            onMouseUp={() => handleChangeImage(img.src)}
+                            className="image-nav"                    
+                          >
+                            <img src={img.src} alt="" />
+                          </div>                        
+                        ))
+                        :
+                        <div className="spinner"><Spinner /></div>
+                    }
+                  </Slider>
+                </div>
                 :
                 <div className="spinner"><Spinner /></div>
             }
