@@ -15,7 +15,8 @@ html {
 body {
   margin: 0;
   direction: rtl !important;
-  text-align: right !important;  
+  text-align: right !important;
+  overscroll-behavior-y: contain;
 }
 
 button {
@@ -29,4 +30,5 @@ a {
 
 .row {
   width: 100%;
+  margin: 0!important;
 }

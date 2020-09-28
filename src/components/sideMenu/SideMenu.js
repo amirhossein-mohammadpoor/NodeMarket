@@ -185,7 +185,7 @@ const SideMenu = () => {
                   <NavLink
                     className={compareURL(location, "/category/119") ? "active" : null}
                     onClick={() => setHideDrawer(true)}
-                    to={"/category/119"}
+                    to={"/category/119/فروش ویژه"}
                   >
                     فروش ویژه
                   </NavLink>

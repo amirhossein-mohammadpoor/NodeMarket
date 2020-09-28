@@ -20,22 +20,35 @@ const MainPrevArrow = props => {
   )
 }
 
+const NextArrowStyle = {
+  fontSize: "30px",
+  display: "inline",
+  padding: "40px 0px",
+  lineHeight: "0",
+  position: "absolute",
+  top: "50%",
+  right: "-15px",
+  transform: "translateY(-50%)",
+  cursor: "pointer"
+}
+const PrevArrowStyle ={  
+  fontSize: "30px",
+  display: "inline",
+  padding: "40px 0px",
+  lineHeight: "0",
+  position: "absolute",
+  top: "50%",
+  left: "-15px",
+  zIndex: "12",
+  transform: "translateY(-50%)",
+  cursor: "pointer"
+}
+
 const ProductNextArrow = props => {
   const { onClick } = props
   return (
     <div
-      style={{
-        fontSize: "30px",
-        backgroundColor: "gainsboro",
-        display: "inline",
-        padding: "40px 0px",
-        lineHeight: "0",
-        position: "absolute",
-        top: "50%",
-        right: "-15px",
-        transform: "translateY(-50%)",
-        cursor: "pointer"
-      }}
+      style={NextArrowStyle}
       onClick={onClick}
     >
       <FaChevronRight />
@@ -47,19 +60,7 @@ const ProductPrevArrow = props => {
   const { onClick } = props
   return (
     <div
-      style={{  
-        fontSize: "30px",
-        backgroundColor: "gainsboro",
-        display: "inline",
-        padding: "40px 0px",
-        lineHeight: "0",
-        position: "absolute",
-        top: "50%",
-        left: "-15px",
-        zIndex: "12",
-        transform: "translateY(-50%)",
-        cursor: "pointer"
-      }}
+      style={PrevArrowStyle}
       onClick={onClick}
     >
       <FaChevronLeft />
