@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom"
 import { submitOrder } from "../../redux/actions/userActions"
 import { emptyCart } from "../../redux/actions/cartActions"
 import { NavLink } from "react-router-dom"
+import { Container } from "reactstrap"
 
 const CheckoutPage = ({ userProducts, user, submitOrder, emptyCart }) => {
   const credit = user.credit
@@ -35,7 +36,7 @@ const CheckoutPage = ({ userProducts, user, submitOrder, emptyCart }) => {
 
   return (
     <div className="checkout-wrapper">
-      <div className="checkout-content">
+      <Container className="checkout-content">
         <div className="cash">
           <span>موجودی</span>
           <span>{credit} تومان</span>
@@ -48,7 +49,7 @@ const CheckoutPage = ({ userProducts, user, submitOrder, emptyCart }) => {
           <span>اعتبار باقی مانده</span>
           {
             total < 0 &&
-            <span style={{ color: "red" }}>تومان {total}</span>
+            <span style={{ color: "red" }}>{-total}- تومان</span>
           }
           {
             total >= 0 &&
@@ -67,7 +68,7 @@ const CheckoutPage = ({ userProducts, user, submitOrder, emptyCart }) => {
         >
           ارسال سفارش
         </SubmitButton>
-      </div>
+      </Container>
     </div>
   )
 }
