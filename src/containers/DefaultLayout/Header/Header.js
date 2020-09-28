@@ -64,7 +64,7 @@ const Header = props => {
                   !searching && 
                   searchResult.map(r => (
                     <div key={r.id}>
-                      <NavLink to={`/product/${r.id}`}>
+                      <NavLink to={`/product/${r.id}/${r.name}`}>
                         <img src={r.images[0].src}  alt=""/>
                         <span>{r.name}</span>                        
                       </NavLink>
