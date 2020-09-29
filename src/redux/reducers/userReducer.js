@@ -34,11 +34,7 @@ const reducer = (state = initialState, action) => {
         users: state.users.map(user => (
           user.email === action.user.email ? action.user : user
         ))
-      }
-    case types.USER_ADD_CREDIT:
-      return {
-        ...state
-      }
+      }    
     case types.SUBMIT_ORDER:
       return {
         ...state,

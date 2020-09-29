@@ -6,7 +6,6 @@ import { user } from "../../../redux/selectors/userSelectors"
 import { Col, Row } from "reactstrap"
 
 const UserOrders = ({ user }) => {
-  console.log(user.orders)
   return (
     <div className="user-orders">
       <h4>لیست سفارش ها</h4>
