@@ -10,7 +10,6 @@ import { user } from "../../../redux/selectors/userSelectors"
 import { createStructuredSelector } from "reselect"
 
 const UserProfile = ({ user }) => {
-  console.log(user.position)
   return (
     <div className="user-profile">
       <h3>مشخصات فردی</h3>
