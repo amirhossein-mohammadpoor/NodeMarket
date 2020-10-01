@@ -10,6 +10,7 @@ import { user } from "../../../redux/selectors/userSelectors"
 import { createStructuredSelector } from "reselect"
 
 const UserProfile = ({ user }) => {
+  console.log(user.position)
   return (
     <div className="user-profile">
       <h3>مشخصات فردی</h3>
@@ -36,14 +37,13 @@ const UserProfile = ({ user }) => {
         <h3 >آدرس شما</h3>
         {
           user.position.length !== 0 ?
-            <Map
+            <Map              
               center={user.position}
               zoom={15}
               zoomControl={true}
               doubleClickZoom={false}
               scrollWheelZoom={false}
               dragging={false}
-              animate={true}
             >
               <TileLayer
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -51,10 +51,10 @@ const UserProfile = ({ user }) => {
               />
               <Marker
                 position={user.position}
-                onMouseOver={(e) => {
+                onMouseOver={e => {
                   e.target.openPopup();
                 }}
-                onMouseOut={(e) => {
+                onMouseOut={e => {
                   e.target.closePopup();
                 }}
 

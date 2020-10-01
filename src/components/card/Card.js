@@ -15,7 +15,7 @@ const Card = props => {
 
   return (
     <div className="product-card">
-      <NavLink to={`/product/${id}/${title}`}>
+      <NavLink to={`/product/${id}/${title.replace(/\//g, "")}`}>
         <img
           src={imageSrc}
           alt=""
