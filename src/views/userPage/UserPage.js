@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import "./UserPage.scss"
 import { userRoutes } from "../../routes/routes"
 import {
@@ -15,6 +15,7 @@ import { FaUser, FaCoins, FaFirstOrder, FaHeart } from "react-icons/fa"
 import { BiExit } from "react-icons/bi"
 import { connect, useSelector } from "react-redux"
 import { userSignOut } from "../../redux/actions/userActions"
+import Fallback from "../../components/fallback/Fallback"
 
 const UserPage = ({ userSignOut }) => {
   const token = useSelector(state => state.user.token)
@@ -75,13 +76,30 @@ const UserPage = ({ userSignOut }) => {
                     <Redirect to={`${path}/profile`} />
                   </Route>
                   {
-                    userRoutes.map(route => (
-                      <Route
-                        key={route.path}
-                        path={route.path}
-                        component={route.component}
-                      />
-                    ))
+                    userRoutes.map(route => {
+                      if (route.lazy) {
+                        return (
+                          <Route
+                            key={route.path}
+                            exact={route.exact}
+                            path={route.path}
+                          >
+                            <Suspense fallback={<Fallback />}>
+                              <route.component />
+                            </Suspense>
+                          </Route>
+                        )
+                      } else {
+                        return (
+                          <Route
+                            key={route.path}
+                            exact={route.exact}
+                            path={route.path}
+                            component={route.component}
+                          />
+                        )
+                      }
+                    })
                   }                
               </React.Fragment>
             }            

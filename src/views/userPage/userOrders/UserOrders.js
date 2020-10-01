@@ -16,7 +16,7 @@ const UserOrders = ({ user }) => {
         }
         {
           user.orders.map(order => (
-            <Row className="order-list">
+            <Row className="order-list" key={order}>
               <Col xs={12} sm={8}>
                 <ul>
                   {

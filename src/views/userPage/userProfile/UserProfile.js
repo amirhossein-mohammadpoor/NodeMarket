@@ -1,38 +1,18 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import "./UserProfile.scss"
 import { Col, Row } from "reactstrap"
 import SubmitButton from "../../../components/buttons/submitButton/SubmitButton"
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux"
+import { NavLink } from "react-router-dom"
+import { connect } from "react-redux"
 import { Map, TileLayer, Marker, Popup } from "react-leaflet"
-import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaMapMarkedAlt } from "react-icons/fa"
+import { user } from "../../../redux/selectors/userSelectors"
+import { createStructuredSelector } from "reselect"
 
-const UserProfile = () => {
-  const token = useSelector(state => state.user.token)    
-  const USER = useSelector(state => state.user.users.filter(
-    user => user.email === token
-  ))[0]
-  const [user, setUser] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    number: "",
-    position: []
-  })
-
-  useEffect(() => {
-    setUser({
-      name: USER.name,
-      lastName: USER.lastName,
-      email: USER.email,
-      number: USER.number,
-      position: [...USER.position]
-    })
-  }, [USER])
-
+const UserProfile = ({ user }) => {
   return (
     <div className="user-profile">
-      <h4>مشخصات فردی</h4>
+      <h3>مشخصات فردی</h3>
       <Row>
         <Col xs={12} lg={6}>
           <p className="title">نام</p>
@@ -69,7 +49,7 @@ const UserProfile = () => {
                 attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker 
+              <Marker
                 position={user.position}
                 onMouseOver={(e) => {
                   e.target.openPopup();
@@ -77,7 +57,7 @@ const UserProfile = () => {
                 onMouseOut={(e) => {
                   e.target.closePopup();
                 }}
-            
+
               >
                 <Popup>
                   <div className="marker-popup">
@@ -95,10 +75,10 @@ const UserProfile = () => {
             <SubmitButton>
               {
                 user.position.length !== 0 ?
-                  "تغییر آدرس"                  
+                  "تغییر آدرس"
                   :
-                  "افزودن آدرس+"                  
-              }              
+                  "افزودن آدرس+"
+              }
             </SubmitButton>
           </div>
         </NavLink>
@@ -107,4 +87,8 @@ const UserProfile = () => {
   )
 }
 
-export default UserProfile
+const mapStateToProps = createStructuredSelector({
+  user
+})
+
+export default connect(mapStateToProps, null)(UserProfile)
