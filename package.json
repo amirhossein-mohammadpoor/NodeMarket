@@ -25,11 +25,15 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "slick-carousel": "^1.8.1",
-    "validator": "^13.1.1"
+    "validator": "^13.1.1",
+    "workbox-expiration": "^5.1.4",
+    "workbox-precaching": "^5.1.4",
+    "workbox-routing": "^5.1.4",
+    "workbox-strategies": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.1.6",
+    "workbox-webpack-plugin": "^5.1.4"
   }
 }
