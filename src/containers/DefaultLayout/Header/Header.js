@@ -39,7 +39,7 @@ const Header = props => {
       setSearchResult([])
     }
   }
-
+  
   useEffect(() => {
     setSearch("")
   }, [pathname])

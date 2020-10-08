@@ -4,18 +4,18 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 const MainNextArrow = props => {
   const { onClick } = props
   return (
-    <div      
+    <div
       onClick={onClick}
-    >      
+    >
     </div>
   )
 }
 const MainPrevArrow = props => {
   const { onClick } = props
   return (
-    <div      
+    <div
       onClick={onClick}
-    >      
+    >
     </div>
   )
 }
@@ -29,9 +29,9 @@ const NextArrowStyle = {
   top: "50%",
   right: "-15px",
   transform: "translateY(-50%)",
-  cursor: "pointer"
+  cursor: "pointer"  
 }
-const PrevArrowStyle ={  
+const PrevArrowStyle = {
   fontSize: "30px",
   display: "inline",
   padding: "40px 0px",
@@ -102,14 +102,14 @@ const productsSliderSettings = {
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
       }
     },
     {
       breakpoint: 576,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
       }
     }
@@ -120,8 +120,31 @@ const relatedProductsSliderSetting = {
   dots: false,
   infinite: false,
   speed: 300,
-  slidesToShow: 3,
+  slidesToShow: 5,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ],
   nextArrow: <ProductNextArrow />,
   prevArrow: <ProductPrevArrow />
 }

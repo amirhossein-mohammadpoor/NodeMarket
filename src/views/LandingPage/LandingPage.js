@@ -9,7 +9,7 @@ import Slider from "react-slick"
 import { mainSliderSettings, productsSliderSettings } from "../../constants/sliderConfig"
 import Card from "../../components/card/Card"
 
-const LandingPage = () => {  
+const LandingPage = () => {
   const [newestProducts, setNewestProducts] = useState([])
   const [cheapProducts, setCheapProducts] = useState([])
   const [expoensiveProducts, setExpensiveProducts] = useState([])
@@ -45,97 +45,101 @@ const LandingPage = () => {
   }, [])
 
   return (
-    <Container className="landing-page">
-      <FloatButton />
-      <Slider {...mainSliderSettings}>
-        <div>
-          <img
-            src="/assets/images/1.jpg"
-            alt="slide1"
-            width="100%"
-          />
-        </div>
-        <div>
-          <img
-            src="/assets/images/2.jpg"
-            alt="slide2"
-            width="100%"
-          />
-        </div>
-      </Slider>
-      <h3>جدید ترین ها</h3>
-      <Slider {...productsSliderSettings}>
-        {
-          newestProducts.length !== 0 ?
-            newestProducts.map(product => (
-              <Card
-                key={product.id}
-                title={product.name}
-                imageSrc={product.images[0].src}
-                regularPrice={product.regular_price}
-                price={product.price}
-                id={product.id}
-              />
-            ))
-            :
-            <div><Spinner /></div>
-        }
-      </Slider>
-      <h3>ارزان ترین ها</h3>
-      <Slider {...productsSliderSettings}>
-        {
-          cheapProducts.length !== 0 ?
-            cheapProducts.map(product => (
-              <Card
-                key={product.id}
-                title={product.name}
-                imageSrc={product.images[0].src}
-                regularPrice={product.regular_price}
-                price={product.price}
-                id={product.id}
-              />
-            ))
-            :
-            <div><Spinner /></div>
-        }
-      </Slider>
-      <h3>گرانترین ها</h3>
-      <Slider {...productsSliderSettings}>
-        {
-          expoensiveProducts.length !== 0 ?
-            expoensiveProducts.map(product => (
-              <Card
-                key={product.id}
-                title={product.name}
-                imageSrc={product.images[0].src}
-                regularPrice={product.regular_price}
-                price={product.price}
-                id={product.id}
-              />
-            ))
-            :
-            <div><Spinner /></div>
-        }
-      </Slider>
-      <h3>محبوب ترین ها</h3>
-      <Slider {...productsSliderSettings}>
-        {
-          popularProducts.length !== 0 ?
-            popularProducts.map(product => (
-              <Card
-                key={product.id}
-                title={product.name}
-                imageSrc={product.images[0].src}
-                regularPrice={product.regular_price}
-                price={product.price}
-                id={product.id}
-              />
-            ))
-            :
-            <div><Spinner /></div>
-        }
-      </Slider>
-    </Container>
+    <React.Fragment>
+      <Container fluid="md" className="px-0">
+        <FloatButton />
+        <Slider {...mainSliderSettings}>
+          <div>
+            <img
+              src="/assets/images/1.jpg"
+              alt="slide1"
+              width="100%"
+            />
+          </div>
+          <div>
+            <img
+              src="/assets/images/2.jpg"
+              alt="slide2"
+              width="100%"
+            />
+          </div>
+        </Slider>
+      </Container>
+      <Container className="landing-page">
+        <h3>جدید ترین ها</h3>
+        <Slider {...productsSliderSettings}>
+          {
+            newestProducts.length !== 0 ?
+              newestProducts.map(product => (
+                <Card
+                  key={product.id}
+                  title={product.name}
+                  imageSrc={product.images[0].src}
+                  regularPrice={product.regular_price}
+                  price={product.price}
+                  id={product.id}
+                />
+              ))
+              :
+              <div><Spinner /></div>
+          }
+        </Slider>
+        <h3>ارزان ترین ها</h3>
+        <Slider {...productsSliderSettings}>
+          {
+            cheapProducts.length !== 0 ?
+              cheapProducts.map(product => (
+                <Card
+                  key={product.id}
+                  title={product.name}
+                  imageSrc={product.images[0].src}
+                  regularPrice={product.regular_price}
+                  price={product.price}
+                  id={product.id}
+                />
+              ))
+              :
+              <div><Spinner /></div>
+          }
+        </Slider>
+        <h3>گرانترین ها</h3>
+        <Slider {...productsSliderSettings}>
+          {
+            expoensiveProducts.length !== 0 ?
+              expoensiveProducts.map(product => (
+                <Card
+                  key={product.id}
+                  title={product.name}
+                  imageSrc={product.images[0].src}
+                  regularPrice={product.regular_price}
+                  price={product.price}
+                  id={product.id}
+                />
+              ))
+              :
+              <div><Spinner /></div>
+          }
+        </Slider>
+        <h3>محبوب ترین ها</h3>
+        <Slider {...productsSliderSettings}>
+          {
+            popularProducts.length !== 0 ?
+              popularProducts.map(product => (
+                <Card
+                  key={product.id}
+                  title={product.name}
+                  imageSrc={product.images[0].src}
+                  regularPrice={product.regular_price}
+                  price={product.price}
+                  id={product.id}
+                />
+              ))
+              :
+              <div><Spinner /></div>
+          }
+        </Slider>
+      </Container>
+    </React.Fragment>
   )
 }
 

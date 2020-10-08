@@ -67,7 +67,7 @@ const CategoryPage = () => {
           <Row>
             {
               products.map(product => (
-                <Col xs={6} md={4} lg={3} key={product.id}>
+                <Col xs={12} md={4} lg={3} key={product.id}>
                   <Card
                     imageSrc={product.images[0].src}
                     title={product.name}
