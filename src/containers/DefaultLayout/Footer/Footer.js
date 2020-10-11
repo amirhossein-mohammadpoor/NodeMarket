@@ -1,7 +1,10 @@
 import React from "react"
 import "./Footer.scss"
 import { Row, Col, Container } from "reactstrap"
-import { FaMapMarker, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaMapMarker, FaPhone, FaEnvelope } from "react-icons/fa"
+import logoE from "../../../assets/images/logo-e.jpg"
+import logoK from "../../../assets/images/logo-k.jpg"
+import logoS from "../../../assets/images/logo-s.jpg"
 
 const Footer = () => {
   return (
@@ -48,9 +51,9 @@ const Footer = () => {
           <Col xs={12} sm={6} xl={4}>
             <h5>اطمینان از خرید</h5>
             <div>
-              <img src="/assets/images/logo-e.jpg" width="33%" alt="" />
-              <img src="/assets/images/logo-k.jpg" width="33%" alt="" />
-              <img src="/assets/images/logo-s.jpg" width="33%" alt="" />
+              <img src={logoE} width="33%" alt="" />
+              <img src={logoK} width="33%" alt="" />
+              <img src={logoS} width="33%" alt="" />
             </div>
           </Col>
         </Row>

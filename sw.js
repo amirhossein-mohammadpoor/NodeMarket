@@ -9,7 +9,7 @@ const FONT_CACHE = "fonts"
 precacheAndRoute(self.__WB_MANIFEST)
 
 registerRoute(
-  new RegExp(/[1-9].jpg/),
+  new RegExp(/[1-9]\..*\.jpg/),
   new StaleWhileRevalidate({
     cacheName: CAROUSEL_CACHE,
     plugins: [

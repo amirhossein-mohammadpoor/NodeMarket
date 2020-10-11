@@ -8,6 +8,8 @@ import api from "../../api/wooCommerce"
 import Slider from "react-slick"
 import { mainSliderSettings, productsSliderSettings } from "../../constants/sliderConfig"
 import Card from "../../components/card/Card"
+import fistSlide from "../../assets/images/1.jpg"
+import secondeSlide from "../../assets/images/2.jpg"
 
 const LandingPage = () => {
   const [newestProducts, setNewestProducts] = useState([])
@@ -51,14 +53,14 @@ const LandingPage = () => {
         <Slider {...mainSliderSettings}>
           <div>
             <img
-              src="/assets/images/1.jpg"
+              src={fistSlide}
               alt="slide1"
               width="100%"
             />
           </div>
           <div>
             <img
-              src="/assets/images/2.jpg"
+              src={secondeSlide}
               alt="slide2"
               width="100%"
             />

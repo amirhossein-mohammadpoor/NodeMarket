@@ -36,7 +36,7 @@ const App = () => (
                     component={route.component}
                   />
                 )
-              }              
+              }       
             })
           }
         </Switch>

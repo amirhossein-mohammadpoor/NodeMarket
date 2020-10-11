@@ -7,7 +7,8 @@ module.exports = function override(config, env) {
   config.plugins.push(
     new WorkboxPlugin.InjectManifest({
       swSrc: './sw.js',
-      maximumFileSizeToCacheInBytes: 50000000
+      maximumFileSizeToCacheInBytes: 50000000,
+      include: [/.*\.html/,/.*\.js/, /.*\.css/]
     })
   )
   return config
