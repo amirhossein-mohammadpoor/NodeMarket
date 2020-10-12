@@ -38,7 +38,7 @@ const SideMenu = () => {
           </DefaultButton>
         </div>
       </div>
-      <div        
+      <div
         className="d-none d-lg-block"
       >
         <div className="header-bottom">

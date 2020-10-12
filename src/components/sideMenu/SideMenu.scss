@@ -25,10 +25,11 @@
       .dropdown-content {
         display: none;
         position: absolute;
-        width: 120px;
+        width: 150px;
         top: 25px;
         right: 0;
         text-align: center;
+        
       }
 
       a {
@@ -38,8 +39,8 @@
 
     .dropdown:hover .dropdown-content {
       display: block;      
-      background-color: silver;
-      color: white;
+      background-color: green;
+      color: silver;
     }
   }
 }

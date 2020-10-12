@@ -1,13 +1,4 @@
 import types from '../types/cartTypes'
-
-if (!localStorage.getItem("carts")) {
-  localStorage.setItem("carts", JSON.stringify([]))
-}
-
-const initialState = {
-  carts: JSON.parse(localStorage.getItem("carts"))
-}
-
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.CREATE_CART:

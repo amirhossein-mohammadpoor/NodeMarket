@@ -40,18 +40,7 @@ export const userSignOut = () => {
   }
 }
 
-export const addToFavorites = (email, id) => {
-  const users = JSON.parse(localStorage.getItem("users"))
-  const newUsers = users.map(user => {
-    return user.email === email ? 
-      {
-        ...user,
-        favorites: [...user.favorites, id]
-      }
-    : user
-  })
-  localStorage.setItem("users",JSON.stringify(newUsers))
-
+export const addToFavorites = (email, id) => {  
   return {
     type: types.ADD_TO_FAVORITES,
     email,
@@ -59,18 +48,7 @@ export const addToFavorites = (email, id) => {
   }
 }
 
-export const removeFromFavorites = (email, id) => {
-  const users = JSON.parse(localStorage.getItem("users"))
-  const newUsers = users.map(user => {
-    return user.email === email ? 
-      {
-        ...user,
-        favorites: user.favorites.filter(f => f !== id)
-      }
-    : user
-  })
-  localStorage.setItem("users",JSON.stringify(newUsers))
-
+export const removeFromFavorites = (email, id) => {  
   return {
     type: types.REMOVE_FROM_FAVORITES,
     email,
@@ -78,18 +56,7 @@ export const removeFromFavorites = (email, id) => {
   }
 }
 
-export const submitOrder = (email, order, price) => {
-  const users = JSON.parse(localStorage.getItem("users"))
-  const newUsers = users.map(user => {
-    return user.email === email ? 
-    {
-      ...user,
-      orders: [...user.orders, order],
-      credit: user.credit - price
-    } : user
-  })
-  localStorage.setItem("users", JSON.stringify(newUsers))
-
+export const submitOrder = (email, order, price) => {  
   return {
     type: types.SUBMIT_ORDER,
     email,
