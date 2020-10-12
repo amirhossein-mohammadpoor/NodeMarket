@@ -6,7 +6,11 @@ import Modal from "../../components/modal/Modal"
 import { useParams, useLocation } from "react-router-dom"
 import api from "../../api/wooCommerce"
 import Slider from "react-slick"
-import { relatedProductsSliderSetting, productsSliderSettings } from "../../constants/sliderConfig"
+import {
+  relatedProductsSliderSetting,
+  productsSliderSettings,
+  relatedPicturesSliderSettings
+} from "../../constants/sliderConfig"
 import Card from "../../components/card/Card"
 import { Spinner } from "reactstrap"
 import { FaStar, FaShare, FaTrash } from "react-icons/fa"
@@ -174,17 +178,17 @@ const ProductViewPage = props => {
               product.imageSrc ?
                 <div>
                   <img src={image} alt="" />
-                  <Slider {...productsSliderSettings}>
+                  <Slider {...relatedPicturesSliderSettings}>
                     {
-                      !loading ? 
+                      !loading ?
                         product.imageSrc.map(img => (
                           <div
                             key={img}
                             onMouseUp={() => handleChangeImage(img.src)}
-                            className="image-nav"                    
+                            className="image-nav"
                           >
                             <img src={img.src} alt="" />
-                          </div>                        
+                          </div>
                         ))
                         :
                         <div className="spinner"><Spinner /></div>

@@ -5,7 +5,7 @@ import store from "./redux/store"
 import { routes } from "./routes/routes"
 import Layout from "./containers/DefaultLayout/Layout"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { HashRouter as Router, Route, Switch } from "react-router-dom"
 import Fallback from "./components/fallback/Fallback"
 
 const App = () => (
