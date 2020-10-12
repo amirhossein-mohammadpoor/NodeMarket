@@ -1,13 +1,8 @@
 import types from "../types/userTypes"
 
-if (!localStorage.getItem("users")) {
-  localStorage.setItem("users", JSON.stringify([]))
-  localStorage.setItem("token", "")
-}
-
 const initialState = {
-  users: JSON.parse(localStorage.getItem("users")),
-  token: localStorage.getItem("token")
+  users: [],
+  token: ""
 }
 
 const reducer = (state = initialState, action) => {

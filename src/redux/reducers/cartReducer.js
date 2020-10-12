@@ -1,4 +1,9 @@
 import types from '../types/cartTypes'
+
+const initialState = {
+  carts: []
+}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.CREATE_CART:

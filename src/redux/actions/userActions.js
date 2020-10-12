@@ -1,23 +1,13 @@
 import types from '../types/userTypes'
 
-export const signUpUser = user => {
-  const users = JSON.parse(localStorage.getItem("users"))
-  localStorage.setItem("users", JSON.stringify([...users, user]))
-  localStorage.setItem("token", user.email)
-
+export const signUpUser = user => {  
   return {
     type: types.SIGNUP_USER,
     user
   }
 }
 
-export const editUserProfile = user => {
-  const users = JSON.parse(localStorage.getItem("users"))
-  const newUsers = users.map(u => (
-    u.email === user.email ? user : u
-  ))  
-  localStorage.setItem("users", JSON.stringify(newUsers))
-
+export const editUserProfile = user => {  
   return {
     type: types.EDIT_USER_PROFILE,
     user    
